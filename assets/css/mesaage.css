@@ -1,0 +1,218 @@
+@import url('https://cdn.tailwindcss.com');
+@import 'tailwind.config.js';
+
+/* Custom styles for Message Page */
+@layer utilities {
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Message Container */
+    .message-container {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background-color 0.2s ease;
+    }
+
+    .message-container:hover {
+        background-color: #f8fafc;
+    }
+
+    .message-unread {
+        background-color: #f0f7ff;
+    }
+
+    /* Message Content */
+    .message-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .message-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .message-text {
+        color: #1e293b;
+        line-height: 1.4;
+    }
+
+    .message-username {
+        font-weight: 600;
+        color: #010003;
+    }
+
+    .message-preview {
+        color: #64748b;
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .message-time {
+        color: #64748b;
+        font-size: 13px;
+    }
+
+    /* Message Badges */
+    .message-badge {
+        width: 18px;
+        height: 18px;
+        background-color: #1880E8;
+        color: white;
+        border-radius: 50%;
+        font-size: 11px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Message Buttons */
+    .message-btn {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        transition: all 0.2s ease;
+    }
+
+    .message-btn-primary {
+        border: 1px solid #1880E8;
+        background-color: #1880E8;
+        color: white;
+    }
+
+    .message-btn-primary:hover {
+        background-color: #156fcb;
+    }
+
+    .message-btn-secondary {
+        border: 1px solid #e2e8f0;
+        color: #64748b;
+    }
+
+    .message-btn-secondary:hover {
+        background-color: #e2e8f0;
+    }
+
+    /* Message Filter Tabs */
+    .message-tab {
+        padding: 12px 16px;
+        font-weight: 500;
+        color: #64748b;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s ease;
+    }
+
+    .message-tab:hover {
+        color: #1880E8;
+        background-color: #f0f7ff;
+    }
+
+    .message-tab.active {
+        color: #1880E8;
+        border-bottom-color: #1880E8;
+    }
+
+    /* Message Empty State */
+    .message-empty {
+        color: #64748b;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .message-empty-icon {
+        font-size: 48px;
+        color: #cbd5e1;
+        margin-bottom: 16px;
+    }
+
+    /* Chat Window Styles */
+    .chat-header {
+        border-bottom: 1px solid #e5e7eb;
+        padding: 16px;
+    }
+
+    .chat-messages {
+        height: calc(100vh - 200px);
+        overflow-y: auto;
+        padding: 16px;
+    }
+
+    .message-bubble {
+        max-width: 70%;
+        padding: 10px 16px;
+        border-radius: 18px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+    }
+
+    .message-bubble-sent {
+        background-color: #1880E8;
+        color: white;
+        margin-left: auto;
+        border-bottom-right-radius: 4px;
+    }
+
+    .message-bubble-received {
+        background-color: #f1f5f9;
+        color: #1e293b;
+        margin-right: auto;
+        border-bottom-left-radius: 4px;
+    }
+
+    .message-time-small {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.8);
+        text-align: right;
+        margin-top: 4px;
+    }
+
+    .message-time-small-received {
+        color: #94a3b8;
+    }
+
+    /* Message Input Area */
+    .message-input-container {
+        border-top: 1px solid #e5e7eb;
+        padding: 16px;
+    }
+
+    .message-input {
+        border: 1px solid #e2e8f0;
+        border-radius: 24px;
+        padding: 10px 20px;
+        resize: none;
+    }
+
+    .message-input:focus {
+        outline: none;
+        border-color: #1880E8;
+    }
+
+    .send-button {
+        background-color: #1880E8;
+        color: white;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .send-button:hover {
+        background-color: #156fcb;
+    }
+
+    /* Online Status */
+    .online-status {
+        width: 10px;
+        height: 10px;
+        background-color: #10b981;
+        border-radius: 50%;
+        border: 2px solid white;
+    }
+}

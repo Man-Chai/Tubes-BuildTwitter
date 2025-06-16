@@ -1,0 +1,139 @@
+@import url('https://cdn.tailwindcss.com');
+@import 'tailwind.config.js';
+
+/* Custom styles for Notification Page */
+@layer utilities {
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* Notification Container */
+    .notification-container {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background-color 0.2s ease;
+    }
+
+    .notification-container:hover {
+        background-color: #f8fafc;
+    }
+
+    .notification-unread {
+        background-color: #f0f7ff;
+    }
+
+    /* Notification Content */
+    .notification-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .notification-content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .notification-text {
+        color: #1e293b;
+        line-height: 1.4;
+    }
+
+    .notification-username {
+        font-weight: 600;
+        color: #010003;
+    }
+
+    .notification-time {
+        color: #64748b;
+        font-size: 13px;
+    }
+
+    .notification-action {
+        color: #1880E8;
+        font-weight: 500;
+    }
+
+    /* Notification Badges */
+    .notification-badge {
+        width: 8px;
+        height: 8px;
+        background-color: #1880E8;
+        border-radius: 50%;
+    }
+
+    /* Notification Buttons */
+    .notification-btn {
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 13px;
+        transition: all 0.2s ease;
+    }
+
+    .notification-btn-follow {
+        border: 1px solid #1880E8;
+        color: #1880E8;
+    }
+
+    .notification-btn-follow:hover {
+        background-color: #1880E8;
+        color: white;
+    }
+
+    .notification-btn-dismiss {
+        border: 1px solid #e2e8f0;
+        color: #64748b;
+    }
+
+    .notification-btn-dismiss:hover {
+        background-color: #e2e8f0;
+    }
+
+    /* Notification Filter Tabs */
+    .notification-tab {
+        padding: 12px 16px;
+        font-weight: 500;
+        color: #64748b;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s ease;
+    }
+
+    .notification-tab:hover {
+        color: #1880E8;
+        background-color: #f0f7ff;
+    }
+
+    .notification-tab.active {
+        color: #1880E8;
+        border-bottom-color: #1880E8;
+    }
+
+    /* Notification Empty State */
+    .notification-empty {
+        color: #64748b;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .notification-empty-icon {
+        font-size: 48px;
+        color: #cbd5e1;
+        margin-bottom: 16px;
+    }
+
+    /* Notification Settings */
+    .notification-settings-item {
+        padding: 12px 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .notification-settings-label {
+        font-weight: 500;
+        color: #1e293b;
+    }
+
+    .notification-settings-desc {
+        color: #64748b;
+        font-size: 13px;
+    }
+}

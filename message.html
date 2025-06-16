@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/messages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <title>Messages | Twittr</title>
+</head>
+
+<body class="max-w-7xl mx-auto bg-primary text-white">
+
+    <section class="px-[75px] min-w-fit flex justify-between">
+
+        <!-- Sidebar (same as notifications page) -->
+        <div class="min-w-[230px]">
+            <a href="/">
+                <h2 class="font-bold text-[28px] py-[30px]">twittr.</h2>
+            </a>
+            <div class="flex flex-col gap-[30px]">
+                <a href="index.html" class="flex gap-4">
+                    <img src="assets/home-hashtag.svg" alt="" class="w-7 h7">
+                    <p class="text-xl">Home</p>
+                </a>
+
+                <a href="explore.html" class="flex gap-4">
+                    <img src="assets/search-normal.svg" alt="" class="w-7 h7">
+                    <p class="text-xl">Explore</p>
+                </a>
+
+                <a href="notification.html" class="flex gap-4">
+                    <img src="assets/notification.svg" alt="" class="w-7 h7">
+                    <p class="text-xl">Notifications</p>
+                </a>
+
+                <a href="message.html" class="flex gap-4 active-nav-item">
+                    <img src="assets/sms.svg" alt="" class="w-7 h7">
+                    <p class="text-xl">Messages</p>
+                </a>
+
+                <a href="bookmarks.html" class="flex gap-4">
+                    <img src="assets/note-add.svg" alt="" class="w-7 h7">
+                    <p class="text-xl">Bookmarks</p>
+                </a>
+
+                <a href="communities.html" class="flex gap-4">
+                    <img src="assets/crown-light.svg" alt="" class="w-7 h7">
+                    <p class="text-xl">Communities</p>
+                </a>
+
+                <a href="profile.html" id="btnVisitMyProfile" class="flex gap-4">
+                    <img src="assets/profile-circle.svg" alt="" class="w-7 h7">
+                    <p class="text-xl">Profile</p>
+                </a>
+
+                <a href="login.html" class="flex gap-4">
+                    <img src="assets/group.svg" alt="" class="w-7 h7">
+                    <p class="text-xl">Sign Out</p>
+                </a>
+
+                <a href="index.html" class="w-[200px]">
+                    <span class="btn-blue cursor-pointer text-base font-bold">New Tweet</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Messages Content -->
+        <div class="h-fit border-2 border-line w-full max-w-[600px]">
+            <div class="sticky top-0 z-10 bg-primary bg-opacity-90 backdrop-blur-sm p-4 border-b-2 border-line">
+                <div class="flex justify-between items-center">
+                    <h1 class="text-xl font-bold">Messages</h1>
+                    <button id="messageSettings" class="p-2 rounded-full hover:bg-gray-800">
+                        <img src="assets/setting.svg" alt="Settings" class="w-5 h-5">
+                    </button>
+                </div>
+                
+                <!-- Message search -->
+                <div class="mt-4 relative">
+                    <input type="text" placeholder="Search messages" class="w-full bg-secondary rounded-full py-2 px-4 pl-10 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <img src="assets/search-normal.svg" alt="Search" class="absolute left-3 top-2.5 w-5 h-5">
+                </div>
+            </div>
+
+            <!-- Conversations list -->
+            <div id="conversationsContainer">
+                <!-- Sample conversation - will be populated by JavaScript -->
+                <div class="conversation-item border-b border-line hover:bg-gray-900 bg-blue-50 bg-opacity-10">
+                    <div class="p-4">
+                        <div class="flex items-center">
+                            <div class="mr-3 relative">
+                                <img src="assets/girl1.png" alt="Profile" class="w-12 h-12 rounded-full">
+                                <span class="online-status absolute bottom-0 right-0"></span>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-center">
+                                    <div class="truncate">
+                                        <p class="font-bold truncate">Shayna <img src="assets/verify.png" alt="Verified" class="inline w-4 h-4"></p>
+                                        <p class="text-sm text-username truncate">@shayna</p>
+                                    </div>
+                                    <div class="flex flex-col items-end">
+                                        <p class="text-xs text-username">2 min ago</p>
+                                        <span class="message-badge mt-1">3</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="message-preview mt-1 text-sm text-username truncate">Hey! I just saw your latest design work. It looks amazing! Can we schedule a call to discuss...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Second conversation example -->
+                <div class="conversation-item border-b border-line hover:bg-gray-900">
+                    <div class="p-4">
+                        <div class="flex items-center">
+                            <div class="mr-3">
+                                <img src="assets/man1.png" alt="Profile" class="w-12 h-12 rounded-full">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-center">
+                                    <div class="truncate">
+                                        <p class="font-bold truncate">Masayoshi <img src="assets/verify.png" alt="Verified" class="inline w-4 h-4"></p>
+                                        <p class="text-sm text-username truncate">@masayoshi</p>
+                                    </div>
+                                    <p class="text-xs text-username">1 hr ago</p>
+                                </div>
+                                
+                                <p class="message-preview mt-1 text-sm text-username truncate">The project deadline has been moved up to next Friday. Let me know if you need any help.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right sidebar (same as notifications page) -->
+        <div class="w-[320px]">
+            <div class="pl-[30px] flex flex-col gap-5 py-[30px]">
+                <div class="flex flex-col p-3.5 rounded-[16px] bg-secondary">
+                    <div class="flex flex-col gap-6">
+                        <h2 class="font-bold text-lg">What's happening</h2>
+                        
+                        <div class="news-item">
+                            <p class="text-sm text-username">Technology · Trending</p>
+                            <p class="text-base font-bold">New JavaScript framework released</p>
+                            <p class="text-sm text-username">5,234 posts</p>
+                        </div>
+                        
+                        <div class="news-item">
+                            <p class="text-sm text-username">Sports · Trending</p>
+                            <p class="text-base font-bold">#WorldCup2026</p>
+                            <p class="text-sm text-username">125K posts</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col rounded-[16px] bg-secondary">
+                    <div class="flex flex-col py-3.5">
+                        <h2 class="font-bold text-lg pb-[7px] px-3.5">Who to follow</h2>
+
+                        <div class="follow-suggestion">
+                            <div class="flex justify-between items-center p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/man1.png" alt="Profile" class="w-12 h-12 rounded-full">
+                                    <div class="ml-3">
+                                        <p class="font-bold">Masayoshi <img src="assets/verify.png" alt="Verified" class="inline w-4 h-4"></p>
+                                        <p class="text-sm text-username">@masayoshi</p>
+                                    </div>
+                                </div>
+                                <button class="btn-white-small">Follow</button>
+                            </div>
+                        </div>
+
+                        <div class="follow-suggestion">
+                            <div class="flex justify-between items-center p-3">
+                                <div class="flex items-center">
+                                    <img src="assets/girl2.png" alt="Profile" class="w-12 h-12 rounded-full">
+                                    <div class="ml-3">
+                                        <p class="font-bold">Ramina <img src="assets/verify.png" alt="Verified" class="inline w-4 h-4"></p>
+                                        <p class="text-sm text-username">@ramina</p>
+                                    </div>
+                                </div>
+                                <button class="btn-white-small">Follow</button>
+                            </div>
+                        </div>
+
+                        <a href="#" class="block p-3 text-link">Show more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/Twitt.js"></script>
+    <script src="assets/js/User.js"></script>
+    <script src="assets/js/message.js"></script>
+    <script src="assets/js/notifcation.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#010003',
+                        secondary: '#121316',
+                        paragraph: '#626262',
+                        btn_blue: '#1880E8',
+                        username: '#5E6368',
+                        link: '#1880E8',
+                        line: '#1E1E1E',
+                        like: '#F91880'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
